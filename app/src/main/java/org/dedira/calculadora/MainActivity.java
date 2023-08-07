@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble(n2);
             double soma = num1 + num2;
 
-            this.txtResultado.setText("Resultado: " + soma);
+            this.txtResultado.setText(getString(R.string.result) + soma);
         }
     }
 
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble(n2);
             double soma = num1 * num2;
 
-            this.txtResultado.setText("Resultado: " + soma);
+            this.txtResultado.setText(getString(R.string.result) + soma);
         }
     }
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble(n2);
             double soma = num1 - num2;
 
-            this.txtResultado.setText("Resultado: " + soma);
+            this.txtResultado.setText(getString(R.string.result) + soma);
         }
 
     }
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             double num2 = Double.parseDouble(n2);
             double soma = num1 / num2;
 
-            this.txtResultado.setText("Resultado: " + soma);
+            this.txtResultado.setText(getString(R.string.result) + soma);
         }
     }
 
