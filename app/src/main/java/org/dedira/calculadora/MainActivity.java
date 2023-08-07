@@ -1,13 +1,13 @@
 package org.dedira.calculadora;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     EditText txtNumero01, txtNumero02;
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         String n1 = this.txtNumero01.getText().toString();
         String n2 = this.txtNumero02.getText().toString();
         if (n1.equals("") || n2.equals("")) {
-            Toast.makeText(this, "Digite dois numeros", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.typeTwoNumbers, Toast.LENGTH_SHORT).show();
         } else {
             double num1 = Double.parseDouble(n1);
             double num2 = Double.parseDouble(n2);
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         String n1 = this.txtNumero01.getText().toString();
         String n2 = this.txtNumero02.getText().toString();
         if (n1.equals("") || n2.equals("")) {
-            Toast.makeText(this, "Digite dois numeros", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.typeTwoNumbers, Toast.LENGTH_SHORT).show();
         } else {
             double num1 = Double.parseDouble(n1);
             double num2 = Double.parseDouble(n2);
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         String n1 = this.txtNumero01.getText().toString();
         String n2 = this.txtNumero02.getText().toString();
         if (n1.equals("") || n2.equals("")) {
-            Toast.makeText(this, "Digite dois numeros", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.typeTwoNumbers, Toast.LENGTH_SHORT).show();
         } else {
             double num1 = Double.parseDouble(n1);
             double num2 = Double.parseDouble(n2);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         String n1 = this.txtNumero01.getText().toString();
         String n2 = this.txtNumero02.getText().toString();
         if (n1.equals("") || n2.equals("")) {
-            Toast.makeText(this, "Digite dois numeros", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.typeTwoNumbers, Toast.LENGTH_SHORT).show();
         } else {
             double num1 = Double.parseDouble(n1);
             double num2 = Double.parseDouble(n2);

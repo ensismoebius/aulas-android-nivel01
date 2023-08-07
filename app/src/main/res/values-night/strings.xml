@@ -1,7 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Calculadora</string>
     <string name="typeTwoNumbers">Digite dois numeros</string>
-    <string name="divide">Dividir</string>
     <string name="multiply">Multiplicar</string>
     <string name="sum">Somar</string>
     <string name="sub">Subtrair</string>

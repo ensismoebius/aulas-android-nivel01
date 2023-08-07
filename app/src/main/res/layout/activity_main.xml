@@ -1,54 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/txtNumero01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="numberSigned" />
+        android:inputType="numberSigned"
+        tools:ignore="LabelFor"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/txtNumero02"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="numberSigned" />
+        android:inputType="numberSigned"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/btnSoma"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Somar" />
+        android:maxWidth="320dp"
+        android:text="@string/sum" />
 
     <Button
         android:id="@+id/btnSubtrair"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Subtrair" />
+        android:maxWidth="320dp"
+        android:text="@string/sub" />
 
     <Button
         android:id="@+id/btnMultiplicar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Multiplicar" />
+        android:maxWidth="320dp"
+        android:text="@string/multiply" />
 
     <Button
         android:id="@+id/btnDividir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dividir" />
+        android:maxWidth="320dp"
+        android:text="@string/divide" />
 
     <TextView
         android:id="@+id/txtResultado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="@string/result" />
 
 </LinearLayout>
