@@ -5,5 +5,5 @@
     <string name="multiply">Multiplicar</string>
     <string name="sum">Somar</string>
     <string name="sub">Subtrair</string>
-    <string name="result">TextView</string>
+    <string name="result">Resultado: </string>
 </resources>
