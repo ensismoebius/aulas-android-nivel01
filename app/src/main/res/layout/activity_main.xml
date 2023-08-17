@@ -25,7 +25,7 @@
         android:id="@+id/btnSoma"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Somar" />
+        android:onClick="somar" />
 
     <Button
         android:id="@+id/btnSubtrair"
