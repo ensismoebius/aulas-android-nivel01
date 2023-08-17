@@ -88,25 +88,25 @@ public class MainActivity extends AppCompatActivity {
         this.btnSomar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                somar(v)
+                somar(v);
             }
         });
         this.btnDividir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dividir(v)
+                dividir(v);
             }
         });
         this.btnSubtrair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                subtrair(v)
+                subtrair(v);
             }
         });
         this.btnMultiplicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                multiplicar(v)
+                multiplicar(v);
             }
         });
     }
