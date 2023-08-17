@@ -85,9 +85,29 @@ public class MainActivity extends AppCompatActivity {
         this.btnSubtrair = this.findViewById(R.id.btnSubtrair);
         this.btnMultiplicar = this.findViewById(R.id.btnMultiplicar);
 
-        this.btnSomar.setOnClickListener(v -> somar(v));
-        this.btnDividir.setOnClickListener(v -> dividir(v));
-        this.btnSubtrair.setOnClickListener(v -> subtrair(v));
-        this.btnMultiplicar.setOnClickListener(v -> multiplicar(v));
+        this.btnSomar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                somar(v)
+            }
+        });
+        this.btnDividir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dividir(v)
+            }
+        });
+        this.btnSubtrair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                subtrair(v)
+            }
+        });
+        this.btnMultiplicar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                multiplicar(v)
+            }
+        });
     }
 }
