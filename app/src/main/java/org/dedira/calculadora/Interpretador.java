@@ -5,9 +5,7 @@ import java.util.Stack;
 public class Interpretador {
     public static String avaliar(String expressao) {
 
-        if (expressao.trim().isEmpty()) {
-            return "";
-        }
+        if (expressao.trim().isEmpty()) return "";
 
         Stack<String> valores = new Stack<String>();
         Stack<Character> operacoes = new Stack<Character>();
