@@ -1,113 +1,124 @@
 package org.dedira.calculadora;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    EditText txtNumero01, txtNumero02;
-    Button btnSomar, btnSubtrair, btnMultiplicar, btnDividir;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnce;
+    Button btnIgual, btnMais, btnMenos, btnMult, btnDiv, btnAbre, btnFecha;
+
     TextView txtResultado;
-
-    public void somar(View v) {
-        String n1 = this.txtNumero01.getText().toString();
-        String n2 = this.txtNumero02.getText().toString();
-        if (n1.equals("") || n2.equals("")) {
-            Toast.makeText(this, "Digite dois numeros", Toast.LENGTH_SHORT).show();
-        } else {
-            double num1 = Double.parseDouble(n1);
-            double num2 = Double.parseDouble(n2);
-            double soma = num1 + num2;
-
-            this.txtResultado.setText("Resultado: " + soma);
-        }
-    }
-
-    public void multiplicar(View v) {
-        String n1 = this.txtNumero01.getText().toString();
-        String n2 = this.txtNumero02.getText().toString();
-        if (n1.equals("") || n2.equals("")) {
-            Toast.makeText(this, "Digite dois numeros", Toast.LENGTH_SHORT).show();
-        } else {
-            double num1 = Double.parseDouble(n1);
-            double num2 = Double.parseDouble(n2);
-            double soma = num1 * num2;
-
-            this.txtResultado.setText("Resultado: " + soma);
-        }
-    }
-
-    public void subtrair(View v) {
-        String n1 = this.txtNumero01.getText().toString();
-        String n2 = this.txtNumero02.getText().toString();
-        if (n1.equals("") || n2.equals("")) {
-            Toast.makeText(this, "Digite dois numeros", Toast.LENGTH_SHORT).show();
-        } else {
-            double num1 = Double.parseDouble(n1);
-            double num2 = Double.parseDouble(n2);
-            double soma = num1 - num2;
-
-            this.txtResultado.setText("Resultado: " + soma);
-        }
-
-    }
-
-    public void dividir(View v) {
-        String n1 = this.txtNumero01.getText().toString();
-        String n2 = this.txtNumero02.getText().toString();
-        if (n1.equals("") || n2.equals("")) {
-            Toast.makeText(this, "Digite dois numeros", Toast.LENGTH_SHORT).show();
-        } else {
-            double num1 = Double.parseDouble(n1);
-            double num2 = Double.parseDouble(n2);
-            double soma = num1 / num2;
-
-            this.txtResultado.setText("Resultado: " + soma);
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.txtNumero01 = this.findViewById(R.id.txtNumero01);
-        this.txtNumero02 = this.findViewById(R.id.txtNumero02);
-        this.txtResultado = this.findViewById(R.id.txtResultado);
+        this.txtResultado = this.findViewById(R.id.txtFormula);
 
-        this.btnSomar = this.findViewById(R.id.btnSoma);
-        this.btnDividir = this.findViewById(R.id.btnDividir);
-        this.btnSubtrair = this.findViewById(R.id.btnSubtrair);
-        this.btnMultiplicar = this.findViewById(R.id.btnMultiplicar);
+        this.btnIgual = this.findViewById(R.id.btnIgual);
+        this.btnMais = this.findViewById(R.id.btnSoma);
+        this.btnMenos = this.findViewById(R.id.btnSubtracao);
+        this.btnMult = this.findViewById(R.id.btnMultiplicacao);
+        this.btnDiv = this.findViewById(R.id.btnDivisao);
+        this.btnAbre = this.findViewById(R.id.btnAbreParenteses);
+        this.btnFecha = this.findViewById(R.id.btnFecharParenteses);
 
-        this.btnSomar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                somar(v);
-            }
+        this.btn1 = this.findViewById(R.id.btn1);
+        this.btn2 = this.findViewById(R.id.btn2);
+        this.btn3 = this.findViewById(R.id.btn3);
+        this.btn4 = this.findViewById(R.id.btn4);
+        this.btn5 = this.findViewById(R.id.btn5);
+        this.btn6 = this.findViewById(R.id.btn6);
+        this.btn7 = this.findViewById(R.id.btn7);
+        this.btn8 = this.findViewById(R.id.btn8);
+        this.btn9 = this.findViewById(R.id.btn9);
+        this.btn0 = this.findViewById(R.id.btn0);
+        this.btnce = this.findViewById(R.id.btnCe);
+
+        this.btnIgual.setOnClickListener(v -> {
+            this.txtResultado.setText(
+                    Interpretador.avaliar(
+                            this.txtResultado.getText().toString()
+                    )
+            );
         });
-        this.btnDividir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dividir(v);
-            }
+
+        this.btnMais.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "+");
         });
-        this.btnSubtrair.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                subtrair(v);
-            }
+
+        this.btnMenos.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "-");
         });
-        this.btnMultiplicar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                multiplicar(v);
-            }
+
+        this.btnMult.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "*");
+        });
+
+        this.btnDiv.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "/");
+        });
+
+        this.btnAbre.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "(");
+        });
+
+        this.btnFecha.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + ")");
+        });
+
+        this.btn1.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "1");
+        });
+
+        this.btn2.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "2");
+        });
+
+        this.btn3.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "3");
+        });
+
+        this.btn4.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "4");
+        });
+
+        this.btn5.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "5");
+        });
+        this.btn6.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "6");
+        });
+
+        this.btn7.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "7");
+        });
+
+
+        this.btn8.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "8");
+        });
+
+        this.btn9.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "9");
+        });
+
+        this.btn0.setOnClickListener(v -> {
+            this.txtResultado.setText(this.txtResultado.getText().toString() + "0");
+        });
+
+        this.btnce.setOnClickListener(v -> {
+            this.txtResultado.setText("");
         });
     }
 }
+
+
+
+
+
+
