@@ -6,16 +6,22 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnce;
     Button btnIgual, btnMais, btnMenos, btnMult, btnDiv, btnAbre, btnFecha;
 
     TextView txtResultado;
 
+    ArrayList<String> listaDeExpressoesMatematicas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.listaDeExpressoesMatematicas = new ArrayList<>();
 
         this.txtResultado = this.findViewById(R.id.txtFormula);
 
@@ -40,11 +46,17 @@ public class MainActivity extends AppCompatActivity {
         this.btnce = this.findViewById(R.id.btnCe);
 
         this.btnIgual.setOnClickListener(v -> {
+
+            this.listaDeExpressoesMatematicas.add(
+                    this.txtResultado.getText().toString()
+            );
+
             this.txtResultado.setText(
                     Interpretador.avaliar(
                             this.txtResultado.getText().toString()
                     )
             );
+
         });
 
         this.btnMais.setOnClickListener(v -> {
