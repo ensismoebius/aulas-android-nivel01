@@ -10,6 +10,9 @@ import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 
+/**
+ * Adapta a fonte de dados ao formato pedidono layout do item da lista
+ */
 public class ResultadoAdaptador extends ArrayAdapter<String> {
 
     public ResultadoAdaptador(@NonNull Context context, ArrayList<String> lista) {
