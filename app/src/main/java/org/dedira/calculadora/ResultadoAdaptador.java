@@ -37,5 +37,6 @@ public class ResultadoAdaptador extends ArrayAdapter<String> {
             precarregado = LayoutInflater.from(this.getContext()).inflate(R.layout.linha, pai, false);
         }
 
+        return null;
     }
 }
