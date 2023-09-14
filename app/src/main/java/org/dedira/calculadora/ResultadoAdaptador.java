@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
@@ -40,6 +41,14 @@ public class ResultadoAdaptador extends ArrayAdapter<String> {
             precarregado = LayoutInflater.from(this.getContext()).inflate(R.layout.linha, pai, false);
         }
 
-        return null;
+        TextView txtHistorico = precarregado.findViewById(R.id.txtHistorico);
+
+        if (expressaoMatematica != null) {
+            txtHistorico.setText(expressaoMatematica);
+        } else {
+            txtHistorico.setText("");
+        }
+        return precarregado;
+
     }
 }

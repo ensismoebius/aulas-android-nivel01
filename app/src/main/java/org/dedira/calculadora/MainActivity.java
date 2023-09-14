@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
         this.listaDeExpressoesMatematicas = new ArrayList<>();
 
         this.txtResultado = this.findViewById(R.id.txtFormula);
+        this.txtResultado.setOnClickListener(v -> {
+            HistoricoDeContas h = new HistoricoDeContas(this.listaDeExpressoesMatematicas);
+        });
 
         this.btnIgual = this.findViewById(R.id.btnIgual);
         this.btnMais = this.findViewById(R.id.btnSoma);
@@ -47,15 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
         this.btnIgual.setOnClickListener(v -> {
 
-            this.listaDeExpressoesMatematicas.add(
-                    this.txtResultado.getText().toString()
-            );
+            this.listaDeExpressoesMatematicas.add(this.txtResultado.getText().toString());
 
-            this.txtResultado.setText(
-                    Interpretador.avaliar(
-                            this.txtResultado.getText().toString()
-                    )
-            );
+            this.txtResultado.setText(Interpretador.avaliar(this.txtResultado.getText().toString()));
 
         });
 
