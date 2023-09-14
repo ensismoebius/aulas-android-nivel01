@@ -14,18 +14,15 @@ public class MainActivity extends AppCompatActivity {
 
     TextView txtResultado;
 
-    ArrayList<String> listaDeExpressoesMatematicas;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.listaDeExpressoesMatematicas = new ArrayList<>();
+        Informacoes.listaDeExpressoesMatematicas = new ArrayList<>();
 
         this.txtResultado = this.findViewById(R.id.txtFormula);
         this.txtResultado.setOnClickListener(v -> {
-            HistoricoDeContas h = new HistoricoDeContas(this.listaDeExpressoesMatematicas);
         });
 
         this.btnIgual = this.findViewById(R.id.btnIgual);
@@ -50,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.btnIgual.setOnClickListener(v -> {
 
-            this.listaDeExpressoesMatematicas.add(this.txtResultado.getText().toString());
+            Informacoes.listaDeExpressoesMatematicas.add(this.txtResultado.getText().toString());
 
             this.txtResultado.setText(Interpretador.avaliar(this.txtResultado.getText().toString()));
 
