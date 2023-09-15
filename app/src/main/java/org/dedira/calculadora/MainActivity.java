@@ -1,5 +1,6 @@
 package org.dedira.calculadora;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,8 +22,13 @@ public class MainActivity extends AppCompatActivity {
 
         Informacoes.listaDeExpressoesMatematicas = new ArrayList<>();
 
+        // Vincula a abertura do histórico
+        // ao clique na caixa de texto
         this.txtResultado = this.findViewById(R.id.txtFormula);
         this.txtResultado.setOnClickListener(v -> {
+            Intent intencao = new Intent(this, HistoricoDeContas.class);
+
+            startActivity(intencao);
         });
 
         this.btnIgual = this.findViewById(R.id.btnIgual);
@@ -46,11 +52,8 @@ public class MainActivity extends AppCompatActivity {
         this.btnce = this.findViewById(R.id.btnCe);
 
         this.btnIgual.setOnClickListener(v -> {
-
             Informacoes.listaDeExpressoesMatematicas.add(this.txtResultado.getText().toString());
-
             this.txtResultado.setText(Interpretador.avaliar(this.txtResultado.getText().toString()));
-
         });
 
         this.btnMais.setOnClickListener(v -> {
