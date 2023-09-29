@@ -4,4 +4,6 @@ import java.util.ArrayList;
 
 public class Informacoes {
     public static ArrayList<String> listaDeExpressoesMatematicas;
+
+    public static String expressaoAtual; // Novo!
 }

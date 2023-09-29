@@ -22,7 +22,13 @@ public class HistoricoDeContas extends AppCompatActivity {
         // Instancia o adaptador
         this.adaptador = new ResultadoAdaptador(
                 this,
-                Informacoes.listaDeExpressoesMatematicas
+                Informacoes.listaDeExpressoesMatematicas,
+
+                // Novo!
+                expressao -> {
+                    Informacoes.expressaoAtual = expressao;
+                    finish();
+                }
         );
 
         // Recupera uma referencia a lista
@@ -30,7 +36,9 @@ public class HistoricoDeContas extends AppCompatActivity {
 
         // Vincula a lista ao adaptador
         lista.setAdapter(this.adaptador);
+
     }
+
 }
 
 

@@ -124,6 +124,13 @@ public class MainActivity extends AppCompatActivity {
             this.txtResultado.setText("");
         });
     }
+
+    // Novo!
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.txtResultado.setText(Informacoes.expressaoAtual);
+    }
 }
 
 

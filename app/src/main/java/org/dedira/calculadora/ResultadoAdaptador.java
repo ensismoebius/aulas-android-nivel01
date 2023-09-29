@@ -16,8 +16,15 @@ import java.util.ArrayList;
  */
 public class ResultadoAdaptador extends ArrayAdapter<String> {
 
-    public ResultadoAdaptador(@NonNull Context context, ArrayList<String> lista) {
+    private IContaSelecionada evento; // Novo!
+
+    public ResultadoAdaptador(
+            @NonNull Context context,
+            ArrayList<String> lista,
+            IContaSelecionada evento // Novo!
+    ) {
         super(context, 0, lista);
+        this.evento = evento;
     }
 
     /**
@@ -42,6 +49,11 @@ public class ResultadoAdaptador extends ArrayAdapter<String> {
         }
 
         TextView txtHistorico = precarregado.findViewById(R.id.txtHistorico);
+
+        // Novo !
+        txtHistorico.setOnClickListener( v -> {
+            this.evento.selecionada(expressaoMatematica);
+        });
 
         if (expressaoMatematica != null) {
             txtHistorico.setText(expressaoMatematica);
