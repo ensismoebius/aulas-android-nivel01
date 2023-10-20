@@ -2,13 +2,16 @@ package org.dedira.calculadora;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.util.ArrayList;
 
 public class BancoDeDados {
 
     private final FirebaseFirestore db;
 
 
-    public BancoDeDados(){
+    public BancoDeDados() {
         db = FirebaseFirestore.getInstance();
 
         FirebaseFirestoreSettings.Builder fabricaDeConfiguracao =
@@ -20,7 +23,24 @@ public class BancoDeDados {
         db.setFirestoreSettings(settings);
     }
 
+    public void carregarExpressoes() {
 
+        db.collection("expressoes").get().addOnCompleteListener(
+                tarefa -> {
+                    if (tarefa.isSuccessful()) {
+                        ArrayList<Expressao> expressoes = new ArrayList<>();
+
+                        for (QueryDocumentSnapshot documento : tarefa.getResult()) {
+                            Expressao e = documento.toObject(Expressao.class);
+                            e.id = documento.getId();
+                            expressoes.add(e);
+                        }
+                    }
+                }
+        );
+
+
+    }
 
 
 }
