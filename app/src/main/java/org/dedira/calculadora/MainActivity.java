@@ -22,6 +22,17 @@ public class MainActivity extends AppCompatActivity {
 
         Informacoes.listaDeExpressoesMatematicas = new ArrayList<>();
 
+        BancoDeDados bd = new BancoDeDados();
+
+        bd.carregarExpressoes(informacoes -> {
+            for (Object expressao : informacoes) {
+
+                Expressao e = (Expressao) expressao;
+
+                System.out.println(e.expressaoMatematica);
+            }
+        });
+
         // Vincula a abertura do histórico
         // ao clique na caixa de texto
         this.txtResultado = this.findViewById(R.id.txtFormula);

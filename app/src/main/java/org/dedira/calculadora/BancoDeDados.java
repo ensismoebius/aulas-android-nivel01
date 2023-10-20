@@ -23,7 +23,7 @@ public class BancoDeDados {
         db.setFirestoreSettings(settings);
     }
 
-    public void carregarExpressoes() {
+    public void carregarExpressoes(IContratoExpressoesCarregadas c) {
 
         db.collection("expressoes").get().addOnCompleteListener(
                 tarefa -> {
@@ -35,6 +35,7 @@ public class BancoDeDados {
                             e.id = documento.getId();
                             expressoes.add(e);
                         }
+                        c.dadosCarregados(expressoes);
                     }
                 }
         );
