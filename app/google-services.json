@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "631829396947",
-    "project_id": "calculadora-1269e",
-    "storage_bucket": "calculadora-1269e.appspot.com"
+    "project_number": "48268737332",
+    "project_id": "calculadora-2356b",
+    "storage_bucket": "calculadora-2356b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:631829396947:android:5cfed6dc8eb0e09b264326",
+        "mobilesdk_app_id": "1:48268737332:android:4191a8a487b7edaecd4361",
         "android_client_info": {
           "package_name": "org.dedira.calculadora"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCZlDqlb77dnAo8I-kWQEUZUeAF8AApDjI"
+          "current_key": "AIzaSyAhr28c3SiIM895zOcHr0FBgGHW7Ci2h_w"
         }
       ],
       "services": {
